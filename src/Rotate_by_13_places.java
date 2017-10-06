@@ -1,4 +1,4 @@
-abstract class Rotate_by_13_places{
+class Rotate_by_13_places{
     public static String encode_decode(String s){
         StringBuilder output = new StringBuilder();
         for (int i = 0; i < s.length(); ++i) {

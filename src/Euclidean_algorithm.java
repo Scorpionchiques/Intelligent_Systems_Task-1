@@ -1,7 +1,7 @@
 import static java.lang.Math.abs;
 import static java.lang.Math.floorMod;
 
-abstract class Euclidean_algorithm {
+class Euclidean_algorithm {
 
     public static int percent(int a, int b) {
         while (b != 0)
