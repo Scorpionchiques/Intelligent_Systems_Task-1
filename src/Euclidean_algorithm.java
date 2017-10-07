@@ -1,6 +1,8 @@
 import static java.lang.Math.abs;
 import static java.lang.Math.floorMod;
-
+/**
+ * Non-recursive implementation of GCD's algorithm with three different operations
+ */
 class Euclidean_algorithm {
 
     public static int percent(int a, int b) {

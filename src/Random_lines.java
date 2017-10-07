@@ -3,6 +3,9 @@ import java.util.Random;
 import java.util.List;
 import java.io.*;
 
+/**
+ * Class who give a list of random lines from a txt
+ */
 public class Random_lines {
 
     static List<String> getList(int N, String filename) throws IOException{

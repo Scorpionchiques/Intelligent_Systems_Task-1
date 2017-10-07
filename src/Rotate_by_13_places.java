@@ -1,3 +1,6 @@
+/**
+ * Implementation of the ROT13 algorithm encoder/decoder for the english alphabet
+ */
 class Rotate_by_13_places{
     public static String encode_decode(String s){
         StringBuilder output = new StringBuilder();

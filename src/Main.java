@@ -1,7 +1,6 @@
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.stream.DoubleStream;
+import java.nio.file.Path;
+import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -17,15 +16,34 @@ public class Main {
         System.out.println(S);
         System.out.println(Rotate_by_13_places.encode_decode(S));
     }
+
+    /**
+     * Function for translating hexadecimal numbers to decimal
+     */
     public static void Task3(String hex){
 
         System.out.println(Long.decode("0x" + hex));
     }
+
+
     public static void Task4(){
 
         ScannerIntoStream.intoInt A= new ScannerIntoStream.intoInt(System.in);
         IntStream stream = A.stream();
         stream.limit(5).forEach(x->System.out.println(x));;
+
+    }
+
+    public static void Task5() throws IOException {
+
+        String folderName=JavaFilesFromZip.unzip("E:\\src.zip");
+
+        List<Path> A = JavaFilesFromZip.checkJavaFiles(folderName);
+
+        for (Path i:A
+             ) {
+            System.out.println(i.toString());
+        }
 
     }
 
@@ -41,16 +59,26 @@ public class Main {
         Stream<Long> r_stream = StreamOfRandomNumbers.getStream(seed, a, c, m);
         r_stream.limit(n).forEach(System.out::println);
     }
+    public static void Task9(){
+        String[] arr1 = { "program", "creek", "program", "creek", "java", "web",
+                "program" };
+        Stream f_stream = Stream.of(arr1);
+        String[] arr2 = {"a", "b", "c", "d"};
+        Stream s_stream = Stream.of(arr2);
+        Stream zipped_Stream=Stream_Zip.zip(f_stream, s_stream);
+        zipped_Stream.forEach(System.out::println);
+
+    }
     public static void main(String[] args) throws IOException {
         //Task1(500,-200);
         //Task2(args[0]);
         //Task3("22273E1");
-
          //Task4();
-
+         //Task5();
         //Task6('E', "test.txt");
         //Task7(args[1], args[0]);
         //Task8(256L,25214903917L,11L,2^48L,30);
 
+        //Task9();
     }
 }

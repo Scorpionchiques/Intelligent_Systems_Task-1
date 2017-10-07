@@ -7,7 +7,9 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-
+/**
+ * Class to turn Scanner into a int/double/line/string Stream
+ */
 public class ScannerIntoStream{
     public static class intoInt{
 
