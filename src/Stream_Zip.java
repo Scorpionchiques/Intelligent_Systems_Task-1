@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.stream.Stream;
 
 /**
@@ -7,12 +8,11 @@ import java.util.stream.Stream;
 public class Stream_Zip{
         public static Stream zip(Stream first_Stream, Stream second_Stream){
             Stream.Builder<Object> zipped =Stream.builder();
-            Object[] first_List= first_Stream.toArray();
-            Object[] second_List = second_Stream.toArray();
-            int length = Math.min(first_List.length, second_List.length);
-            for (int i = 0; i < length; ++i){
-                zipped.add(first_List[i]);
-                zipped.add(second_List[i]);
+            Iterator first_iter = first_Stream.iterator();
+            Iterator second_iter = second_Stream.iterator();
+            while(first_iter.hasNext() && second_iter.hasNext()){
+                zipped.add(first_iter.next());
+                zipped.add(second_iter.next());
             }
             return zipped.build();
         }

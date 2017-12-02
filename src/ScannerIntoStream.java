@@ -17,11 +17,14 @@ public class ScannerIntoStream{
         intoInt(InputStream in) {
             scan = new Scanner(in);
         }
-        IntSupplier supplier = ()->{
-            return scan.nextInt();
+        Supplier<Integer> supplier = ()->{
+            if (scan.hasNext()) {
+                return scan.nextInt();
+            }
+            else return null;
         };
-        IntStream stream(){
-            return IntStream.generate(supplier);
+        Stream<Integer> stream(){
+            return Stream.generate(supplier);
         }
     }
     public static class intoDouble{

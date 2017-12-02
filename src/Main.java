@@ -23,20 +23,21 @@ public class Main {
     public static void Task3(String hex){
 
         System.out.println(Long.decode("0x" + hex));
+        System.out.println(Hex2dec.hex2decimal(hex));
     }
 
 
     public static void Task4(){
 
         ScannerIntoStream.intoInt A= new ScannerIntoStream.intoInt(System.in);
-        IntStream stream = A.stream();
-        stream.limit(5).forEach(x->System.out.println(x));;
+        Stream<Integer> stream = A.stream();
+        stream.limit(5).forEach(x->System.out.println(x));
 
     }
 
     public static void Task5() throws IOException {
 
-        String folderName=JavaFilesFromZip.unzip("E:\\src.zip");
+        String folderName=JavaFilesFromZip.unzip("/Users/Zharkov/Documents/src.zip");
 
         List<Path> A = JavaFilesFromZip.checkJavaFiles(folderName);
 
@@ -70,13 +71,13 @@ public class Main {
 
     }
     public static void main(String[] args) throws IOException {
-        //Task1(500,-200);
-        //Task2(args[0]);
+        //Task1(-10,-5);
+        Task2("PriVet - - -");
         //Task3("22273E1");
          //Task4();
          //Task5();
         //Task6('E', "test.txt");
-        //Task7(args[1], args[0]);
+        //Task7(5, "test.txt");
         //Task8(256L,25214903917L,11L,2^48L,30);
 
         //Task9();
